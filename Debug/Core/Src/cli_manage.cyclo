@@ -1,0 +1,2 @@
+../Core/Src/cli_manage.c:32:8:cliManager_init	1
+../Core/Src/cli_manage.c:55:15:w_getCliVersion	2

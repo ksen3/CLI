@@ -1,0 +1,7 @@
+../Drivers/CMSIS/Include/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
+../Core/Src/tty.c:31:6:dma_init	8	static
+../Core/Src/tty.c:69:6:waitChar	4	static
+../Core/Src/tty.c:87:6:printChar	4	static
+../Core/Src/tty.c:109:6:deleteFromScreen	16	static
+../Core/Src/tty.c:131:8:printBuffer	24	static,ignoring_inline_asm
+../Core/Src/tty.c:159:6:DMA1_Channel6_IRQHandler	16	static,ignoring_inline_asm

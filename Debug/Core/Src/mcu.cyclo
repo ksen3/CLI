@@ -1,0 +1,10 @@
+../Core/Src/mcu.c:64:15:w_reset	2
+../Core/Src/mcu.c:92:15:w_flashRead	3
+../Core/Src/mcu.c:134:15:w_flashWrite	5
+../Core/Src/mcu.c:176:6:mcu_reset	1
+../Core/Src/mcu.c:191:10:mcu_memRead	1
+../Core/Src/mcu.c:213:9:mcu_memPageErase	2
+../Core/Src/mcu.c:237:6:mcu_memWrite	1
+../Core/Src/mcu.c:251:6:mcu_init	1
+../Core/Src/mcu.c:267:17:hex2dec	10
+../Core/Src/mcu.c:318:16:checkMemRegion	3

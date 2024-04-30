@@ -1,0 +1,9 @@
+../Core/Src/shell.c:44:16:countArgc	2
+../Core/Src/shell.c:65:15:s_register	5
+../Core/Src/shell.c:98:15:s_parse	3
+../Core/Src/shell.c:139:15:s_find	14
+../Core/Src/shell.c:219:15:s_execute	8
+../Core/Src/shell.c:321:15:s_storeCmd	4
+../Core/Src/shell.c:385:15:s_getLastCmd	3
+../Core/Src/shell.c:427:15:s_getCmd	7
+../Core/Src/shell.c:475:8:shell_processing	1
