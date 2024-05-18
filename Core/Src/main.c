@@ -97,6 +97,7 @@ int main(void)
   led_init();
   mcu_init();
   cliManager_init();
+  user_init();
 
   dma_init();
 

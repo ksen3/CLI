@@ -22,7 +22,8 @@ Core/Src/cli_manage.o: ../Core/Src/cli_manage.c ../Core/Inc/cli_manage.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ ../Core/Inc/user.h
 ../Core/Inc/cli_manage.h:
 ../Core/Inc/shell.h:
 ../Core/Inc/tty.h:
@@ -49,3 +50,4 @@ Core/Src/cli_manage.o: ../Core/Src/cli_manage.c ../Core/Inc/cli_manage.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+../Core/Inc/user.h:

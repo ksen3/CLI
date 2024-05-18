@@ -1,0 +1,5 @@
+../Core/Src/user.c:75:14:checkUser	6
+../Core/Src/user.c:104:15:w_login	2
+../Core/Src/user.c:116:15:w_logout	2
+../Core/Src/user.c:128:15:w_getCurrentUser	2
+../Core/Src/user.c:143:8:user_init	1

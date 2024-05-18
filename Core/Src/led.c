@@ -10,6 +10,7 @@ static function_t funcList[] = {
         		"Example: 'led switch 2 1' - turn on second led; 'led switch 4 0' - turn off fouth led.\r\n" \
 				"Arguments: 1) led number: led number from 1 to 4, 2)led state: 1 - ON, 0 - OFF.\r\n",
         .func = (cmd_t)w_ledSwitch,
+		.permission = 0,
     },
 
 };

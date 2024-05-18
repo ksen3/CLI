@@ -6,11 +6,13 @@
 #include <stdio.h>
 
 #include "tty.h"
+#include "user.h"
 
 
 #define MAX_MODULES 10				///< Max modules quantity the CLI can stores
 #define MAX_FUNCTIONS_IN_MODULE 10	///< Max functions quantity the module can stores
 #define MAX_TOKENS 12				///< Max tokens can be stored
+
 
 #define S_STORE_IN_FLASH 1			///< Store command history in FLASH
 	#ifndef S_STORE_IN_FLASH
@@ -26,10 +28,13 @@
 
 typedef int8_t (*cmd_t)(int32_t argc, const char** argv); ///< Special type for wrapper functions
 
+
 typedef struct {
     const char *name;
     const cmd_t func;
     const char *help;
+    const uint8_t permission;
+
 }function_t;			///< Defines type for function to be stored in module
 
 typedef struct {

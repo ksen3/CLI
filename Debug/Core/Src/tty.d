@@ -22,7 +22,8 @@ Core/Src/tty.o: ../Core/Src/tty.c ../Core/Inc/tty.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/shell.h ../Core/Inc/tty.h
+ ../Core/Inc/shell.h ../Core/Inc/tty.h ../Core/Inc/user.h \
+ ../Core/Inc/shell.h
 ../Core/Inc/tty.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -49,3 +50,5 @@ Core/Src/tty.o: ../Core/Src/tty.c ../Core/Inc/tty.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 ../Core/Inc/shell.h:
 ../Core/Inc/tty.h:
+../Core/Inc/user.h:
+../Core/Inc/shell.h:

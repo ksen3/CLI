@@ -10,9 +10,11 @@ static const char *unknownModule = "Unknown module name. Try 'help' or '?' to ge
 static const char *unknownFunction = "Unknown function in module. Try 'help' or '?' to get all functions in module.\r\n";
 // static const char *badArguments = "Bad arguments of function. Try 'help' or '?' to get function arguments descriptions.\r\n";
 
+//TODO: refrain from actionPtr pointer, use func instead
 static module_t module[MAX_MODULES];	///< Modules database
 static char *token[MAX_TOKENS];			///< Pointer to tokens array after command string parsing
 static cmd_t actionPtr = NULL;			///< Stores pointer to function to be executed
+static function_t *actionFunc;			///< Stores pointer to full function description
 
 static uint8_t countArgc(char *token[]);
 
@@ -189,6 +191,7 @@ shellStatus_e s_find(char *token[])
                     else	//function's action was requested
                     {
                     	actionPtr = module[i].funcList[j].func;	//Save pointer on the found function
+                    	actionFunc = &(module[i].funcList[j]);
                     	return success;
                     }
                 }
@@ -214,7 +217,6 @@ shellStatus_e s_find(char *token[])
  * @return
  * shellStatus_e execution code
  *
- * @TODO:	Access rights
  */
 shellStatus_e s_execute(cmd_t function)
 {
@@ -472,6 +474,20 @@ shellStatus_e s_getCmd(void)
 	return success;
 }
 
+/**
+ * @brief
+ * Contains functions which describe main shell algorithm
+ *
+ * @param[in] uint8_t *in_buffer
+ * Input string received via UART
+ *
+ * @return
+ * Always 0. It's wrong
+ *
+ * @todo:
+ * 		  - status variable is redundant
+ * 		  - return always 0
+ */
 int8_t shell_processing(uint8_t *in_buffer)
 {
 	int8_t status = -1;
@@ -481,6 +497,32 @@ int8_t shell_processing(uint8_t *in_buffer)
 
 	status = s_parse(in_buffer);
 	status = s_find(token);
+
+	//Checking current user and permissions
+#ifdef INC_USER_H_
+	extern user_s currentUser;
+
+	//printBuffer(actionFunc->name);
+
+	if(strcmp(token[0], "user") != 0)
+	{
+		status = checkUser(currentUser.login, currentUser.pass);
+
+		if(status != u_ok)	//Does user exist in list?
+		{
+			printBuffer("Unknown user. Execution forbidden");
+			return -1;
+		}
+
+	}
+
+	if(actionFunc->permission < currentUser.permission)
+	{
+		printBuffer("User authorized. Execution forbidden");
+		return -1;
+	}
+#endif
+
 	status = s_execute(actionPtr);
 
 //	switch(status)
